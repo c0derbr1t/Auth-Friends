@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import { Form, Label, Input, Button } from './Styles';
+
 class Login extends React.Component {
     state = {
         credentials: {
@@ -33,21 +35,27 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.login}>
-                    <input
-                        type="text"
-                        name="username"
-                        value={this.state.credentials.username}
-                        onChange={this.handleChange}
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        value={this.state.credentials.password}
-                        onChange={this.handleChange}
-                    />
-                    <button>Login</button>
-                </form>
+                <Form onSubmit={this.login}>
+                    <Label>
+                        Username:
+                        <Input
+                            type="text"
+                            name="username"
+                            value={this.state.credentials.username}
+                            onChange={this.handleChange}
+                        />
+                    </Label>
+                    <Label>
+                        Password:
+                        <Input
+                            type="password"
+                            name="password"
+                            value={this.state.credentials.password}
+                            onChange={this.handleChange}
+                        />
+                    </Label>
+                    <Button>Login</Button>
+                </Form>
             </div>
         );
     }

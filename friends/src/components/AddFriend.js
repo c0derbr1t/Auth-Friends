@@ -1,6 +1,8 @@
 import React from 'react';
 // import Loader from 'react-loader-spinner';
 
+import { Form, Label, Input, Button } from './Styles';
+
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 class AddFriend extends React.Component {
@@ -34,36 +36,36 @@ class AddFriend extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.add}>
-                    <label>
+                <Form onSubmit={this.add}>
+                    <Label>
                         Name:
-                        <input
+                        <Input
                             type="text"
                             name="name"
                             value={this.state.friend.name}
                             onChange={this.handleChange}
                         />
-                    </label>
-                    <label>
+                    </Label>
+                    <Label>
                         Age:
-                        <input
+                        <Input
                             type="number"
                             name="age"
                             value={this.state.friend.age}
                             onChange={this.handleChange}
                         />
-                    </label>
-                    <label>
+                    </Label>
+                    <Label>
                         Email:
-                        <input
+                        <Input
                             type="email"
                             name="email"
                             value={this.state.friend.email}
                             onChange={this.handleChange}
                         />
-                    </label>
-                    <button>Add</button>
-                </form>
+                    </Label>
+                    <Button>Add</Button>
+                </Form>
             </div>
         )
     }

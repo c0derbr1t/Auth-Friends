@@ -6,6 +6,8 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 // import EditFriend from './EditFriend';
 // import PrivateRoute from './PrivateRoute';
 
+import { List, Friend } from './Styles';
+
 class FriendsList extends React.Component {
     state = {
         fetchingData: false,
@@ -42,8 +44,7 @@ class FriendsList extends React.Component {
         return (
             // <Router>
                 <div>
-                    <div className="title">Friends List</div>
-                    <div className="list">
+                    <List>
                         {this.state.fetchingData && (
                         <div className="load-spinner">
                             <Loader type="Puff" color="#204963" height="60" width="60" /> 
@@ -51,15 +52,15 @@ class FriendsList extends React.Component {
                         </div>
                         )}
                         {localFriends && localFriends.map(friend => (
-                            <div className="friend">
+                            <Friend>
                                 <h3>{friend.name} - {friend.age}</h3>
                                 <h4>{friend.email}</h4>
                                 {/* <Link to="/edit"><span>✐</span></Link>
                                 // <PrivateRoute path="/edit" component={() => <EditFriend friend={friend} />}
                                 //  /> */}
-                            </div> 
+                            </Friend> 
                         ))}
-                    </div>
+                    </List>
                 </div>
             // </Router>
         )
