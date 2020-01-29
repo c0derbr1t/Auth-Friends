@@ -6,7 +6,7 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 // import EditFriend from './EditFriend';
 // import PrivateRoute from './PrivateRoute';
 
-import { List, Friend } from './Styles';
+import { List, Friend, H2 } from './Styles';
 
 class FriendsList extends React.Component {
     state = {
@@ -53,8 +53,10 @@ class FriendsList extends React.Component {
                         )}
                         {localFriends && localFriends.map(friend => (
                             <Friend>
-                                <h3>{friend.name} - {friend.age}</h3>
-                                <h4>{friend.email}</h4>
+                                <H2>{friend.name}</H2>
+                                <h3>{friend.email}</h3>
+                                <h3>{friend.job}</h3>
+                                <h4>Age: {friend.age}</h4>
                                 {/* <Link to="/edit"><span>✐</span></Link>
                                 // <PrivateRoute path="/edit" component={() => <EditFriend friend={friend} />}
                                 //  /> */}

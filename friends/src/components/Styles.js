@@ -10,7 +10,7 @@ export const Title = styled.h1`
     font-size: 3rem;
     width: 48%;
     background: #004646;
-    color: white;
+    color: #ffd88f;
 `;
 
 export const Nav = styled.div`
@@ -85,6 +85,10 @@ export const Friend = styled.div`
     background: #004646;
     color: white;
     padding: 1%;
+`;
+
+export const H2 = styled.h2`
+    color: #ffd88f;
 `;
 
 // AddFriend

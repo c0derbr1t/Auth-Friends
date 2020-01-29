@@ -10,7 +10,8 @@ class AddFriend extends React.Component {
         friend: {
             name: '',
             age: '',
-            email: ''
+            email: '',
+            job: ''
         }
     };
 
@@ -61,6 +62,15 @@ class AddFriend extends React.Component {
                             type="email"
                             name="email"
                             value={this.state.friend.email}
+                            onChange={this.handleChange}
+                        />
+                    </Label>
+                    <Label>
+                        Job:
+                        <Input
+                            type="text"
+                            name="job"
+                            value={this.state.friend.job}
                             onChange={this.handleChange}
                         />
                     </Label>
