@@ -17,7 +17,7 @@ export const Nav = styled.div`
     display: flex;
     justify-content: space-around;
     width: 60%;
-    margin: 0 auto 3%;
+    margin: 0 auto 2%;
 `;
 
 export const Linked = styled(Link)`
@@ -89,6 +89,11 @@ export const Friend = styled.div`
 
 export const H2 = styled.h2`
     color: #ffd88f;
+`;
+
+export const Symbol = styled.span`
+    color: #ffd88f;
+    font-size: 1.75rem;
 `;
 
 // AddFriend

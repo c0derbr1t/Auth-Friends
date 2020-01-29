@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import FriendsList from './components/FriendsList';
 import AddFriend from './components/AddFriend';
+// import EditFriend from './components/EditFriend';
 import PrivateRoute from './components/PrivateRoute';
 
 import { Title, Linked, Nav } from './components/Styles';
@@ -11,6 +12,7 @@ import { Title, Linked, Nav } from './components/Styles';
 import './App.css';
 
 function App() {
+
   return (
    <Router>
      <div className="App">
@@ -23,6 +25,7 @@ function App() {
        <Switch>
          <PrivateRoute path="/protected" component={FriendsList} />
          <PrivateRoute path="/add" component={AddFriend} />
+         {/* <PrivateRoute path="/edit" component={() => <EditFriend />}/> */}
          <Route path="/login" component={Login} />
          <Route component={Login} />
        </Switch>

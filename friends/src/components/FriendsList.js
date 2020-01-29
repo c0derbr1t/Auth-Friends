@@ -1,12 +1,12 @@
 import React from 'react';
-// import { BrowserRouter as Router, Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 // import EditFriend from './EditFriend';
 // import PrivateRoute from './PrivateRoute';
 
-import { List, Friend, H2 } from './Styles';
+import { List, Friend, H2, Symbol } from './Styles';
 
 class FriendsList extends React.Component {
     state = {
@@ -57,9 +57,9 @@ class FriendsList extends React.Component {
                                 <h3>{friend.email}</h3>
                                 <h3>{friend.job}</h3>
                                 <h4>Age: {friend.age}</h4>
-                                {/* <Link to="/edit"><span>✐</span></Link>
-                                // <PrivateRoute path="/edit" component={() => <EditFriend friend={friend} />}
-                                //  /> */}
+                                {/* <Link to="/edit"> */}
+                                    <Symbol>✐</Symbol>
+                                {/* </Link> */}
                             </Friend> 
                         ))}
                     </List>
