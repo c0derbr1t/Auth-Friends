@@ -1,14 +1,14 @@
 import React from 'react';
-// import Loader from 'react-loader-spinner';
 
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-class AddFriend extends React.Component {
+class EditFriend extends React.Component {
     state = {
         friend: {
-            name: '',
-            age: '',
-            email: ''
+            id: this.props.friend.id,
+            name: this.props.friend.name,
+            age: this.props.friend.age,
+            email: this.props.friend.email
         }
     };
 
@@ -18,25 +18,25 @@ class AddFriend extends React.Component {
                 ...this.state.friend,
                 [e.target.name]: e.target.value
             }
-        });
+        })
     }
 
-    add = e => {
+    edit = e => {
         e.preventDefault();
         axiosWithAuth()
-            .post("/friends", this.state.friend)
+            .put(`/friends/${this.state.friend.id}`, this.state.friend)
             .then(res => {
                 this.props.history.push("/protected");
             })
-            .catch(err => console.log("Add Error", err));
+            .catch(err => console.log("Edit Error", err));
     }
 
     render() {
         return (
             <div>
-                <form onSubmit={this.add}>
+                <form onSubmit={this.edit}>
                     <label>
-                        Name:
+                        Name: 
                         <input
                             type="text"
                             name="name"
@@ -45,7 +45,7 @@ class AddFriend extends React.Component {
                         />
                     </label>
                     <label>
-                        Age:
+                        Age: 
                         <input
                             type="number"
                             name="age"
@@ -62,11 +62,11 @@ class AddFriend extends React.Component {
                             onChange={this.handleChange}
                         />
                     </label>
-                    <button>Add</button>
+                    <button>Edit</button>
                 </form>
             </div>
         )
     }
 }
 
-export default AddFriend;
+export default EditFriend;
