@@ -18,11 +18,13 @@ class FriendsList extends React.Component {
             .then(res => {
                 // console.log(res.data);
                 this.setState({
-                    friends: res.data
+                    friends: res.data,
                 })
             })
             .catch(err => console.log(err));
+            
     }
+    
 
     render() {
         return (
@@ -35,12 +37,12 @@ class FriendsList extends React.Component {
                         <p>Loading...</p>
                     </div>
                     )}
-                    {/* {friends.map(friend => (
+                    {this.state.friends.map(friend => (
                         <div className="friend">
                             <h3>{friend.name} - {friend.age}</h3>
                             <h4>{friend.email}</h4>
                         </div>
-                    ))} */}
+                    ))}
                 </div>
             </div>
         )
